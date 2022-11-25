@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container
-      :class="{ 'px-4': $vuetify.breakpoint.smAndUp, 'px-16': $vuetify.breakpoint.smAndDown }"
+      :class="{ 'px-4': $vuetify.breakpoint.smAndUp, '': $vuetify.breakpoint.smAndDown }"
     >
       <v-form ref="form" lazy-validation>
         <v-container>

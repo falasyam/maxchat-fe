@@ -1,6 +1,6 @@
 <template>
   <v-container
-    :class="{ 'px-4': $vuetify.breakpoint.smAndUp, 'px-16': $vuetify.breakpoint.smAndDown }"
+    :class="{ 'px-4': $vuetify.breakpoint.smAndUp, '': $vuetify.breakpoint.smAndDown }"
   >
     <section class="py-2">
       <v-row>
@@ -32,7 +32,7 @@
         <v-col cols="6" md="3">
           <v-card color="yellow lighten-4" width="200px" class="py-4 elevation-0">
             <div class="text-center">
-              <div class="title font-weight-bold yellow--text text--darken-4">50</div>
+              <div class="title font-weight-bold yellow--text text--darken-4">{{ total }}</div>
               <div class="title font-weight-regular yellow--text text--darken-4">
                 Terlayani
               </div>
@@ -47,8 +47,13 @@
             </div>
           </v-card>
         </v-col>
-        <v-col cols="6" md="4">
-          <v-card></v-card>
+        <v-col cols="6" md="3">
+          <v-card color="lime lighteen-4" width="200px" class="py-4 elevation-0">
+            <div class="text-center">
+              <div class="title font-weight-bold lime--text text--darken-4">512 Pasien</div>
+              <div class="title font-weight-regular lime--text text--darken-4">Bulan Lalu</div>
+            </div>
+          </v-card>
         </v-col>
       </v-row>
     </section>
@@ -61,7 +66,7 @@
               'font-weight-bold title': $vuetify.breakpoint.smAndDown,
             }"
           >
-            Daftar Pasien
+            Pasien Selanjutnya
           </div>
         </v-col>
       </v-row>
@@ -119,6 +124,7 @@ export default {
     return {
       loading: false,
       users: [],
+      total: "",
       headers: [
         { text: "Title", align: "start", value: "title" },
         { text: "First Name", value: "firstName" },
@@ -134,7 +140,7 @@ export default {
       this.loading = true;
       axios({
         method: "get",
-        url: "https://dummyapi.io/data/v1/user?limit=3",
+        url: "https://dummyapi.io/data/v1/user?limit=5",
         headers: {
           "app-id": "637ed92222ecff0b1c016f28",
         },
@@ -142,6 +148,7 @@ export default {
         .then((response) => {
           console.log(response.data);
           this.users = response.data.data.map(this.getUserData);
+          this.total = response.data.total;
           this.loading = false;
         })
         .catch((error) => {

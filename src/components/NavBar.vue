@@ -1,5 +1,11 @@
 <template>
-  <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" permanent fixed>
+  <v-navigation-drawer
+    :mini-variant.sync="mini"
+    permanent
+    expand-on-hover
+    fixed
+    class="hidden-sm-and-down"
+  >
     <v-list-item class="px-2">
       <v-list-item-avatar>
         <v-btn icon @click.stop="mini = !mini">
@@ -39,7 +45,7 @@ export default {
       selectedItem: 0,
       items: [
         { title: "Dashboard", icon: "mdi-home-city", link: "/" },
-        { title: "Users", icon: "mdi-account-group-outline", link: "/user" },
+        { title: "Pasien", icon: "mdi-account-group-outline", link: "/user" },
       ],
       mini: true,
     };

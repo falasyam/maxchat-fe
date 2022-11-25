@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container
-      :class="{ 'px-4': $vuetify.breakpoint.smAndUp, 'pl-16': $vuetify.breakpoint.smAndDown }"
+      :class="{ 'px-4': $vuetify.breakpoint.smAndUp, '': $vuetify.breakpoint.smAndDown }"
     >
       <section class="py-2">
         <v-row>
@@ -21,42 +21,71 @@
       <div class="py-4">
         <v-card class="py-4">
           <v-card-title>
-            <v-col cols="8" md="10">
-              <v-text-field
-                v-model="search"
-                filled
-                rounded
-                prepend-inner-icon="mdi-magnify"
-                label="Search"
-                single-line
-                hide-details
-              ></v-text-field>
-            </v-col>
-            <v-col cols="4" md="2">
-              <v-btn
-                color="primary"
-                elevation="4"
-                tile
-                outlined
-                raised
-                class="hidden-sm-and-down rounded-lg"
-                to="user/add"
-              >
-                <v-icon left>mdi-plus</v-icon> Tambah
-              </v-btn>
-              <v-btn
-                color="primary"
-                elevation="4"
-                fab
-                outlined
-                raised
-                rounded
-                to="user/add"
-                class="hidden-sm-and-up"
-              >
-                <v-icon>mdi-plus</v-icon>
-              </v-btn>
-            </v-col>
+            <v-row>
+              <v-col cols="6" md="7">
+                <v-text-field
+                  v-model="search"
+                  filled
+                  rounded
+                  prepend-inner-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+              </v-col>
+              <v-col cols="3" md="2">
+                <v-btn
+                  color="primary"
+                  elevation="4"
+                  tile
+                  outlined
+                  raised
+                  class="hidden-sm-and-down rounded-lg"
+                  to="user/add"
+                >
+                  <v-icon left>mdi-plus</v-icon> Tambah
+                </v-btn>
+                <!-- Mobile Only -->
+                <v-btn
+                  color="primary"
+                  elevation="4"
+                  fab
+                  outlined
+                  raised
+                  rounded
+                  to="user/add"
+                  class="hidden-sm-and-up"
+                >
+                  <v-icon>mdi-plus</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="3" md="3">
+                <v-btn
+                  color="primary"
+                  elevation="4"
+                  tile
+                  outlined
+                  raised
+                  class="hidden-sm-and-down rounded-lg"
+                  to=""
+                >
+                  <v-icon left>mdi-file-excel-outline</v-icon> Export to Excel
+                </v-btn>
+                <!-- Mobile Only -->
+                <v-btn
+                  color="primary"
+                  elevation="4"
+                  fab
+                  outlined
+                  raised
+                  rounded
+                  to=""
+                  class="hidden-sm-and-up"
+                >
+                  <v-icon>mdi-file-excel-outline</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-card-title>
           <v-container>
             <v-data-table
