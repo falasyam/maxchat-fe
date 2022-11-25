@@ -20,7 +20,7 @@
     <section>
       <v-row class="py-12">
         <v-col cols="6" md="3">
-          <v-card color="light-blue lighten-2" width="200px" class="py-4 elevation-0">
+          <v-card color="light-blue lighten-4" width="200px" class="py-4 elevation-0">
             <div class="text-center">
               <div class="title font-weight-bold light-blue--text text--darken-4">21</div>
               <div class="title font-weight-regular light-blue--text text--darken-4">
